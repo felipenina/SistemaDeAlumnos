@@ -7,6 +7,10 @@ public class Profesor : Persona
     {
         Materia = materia;
     }
+    public override string Presentarse()
+    {
+        return $"Hola, soy {Nombre} y dicto {Materia}.";
+    }
     public override string ToString()
     {
         return $"Profesor: {Nombre} - DNI: {Documento} - Materia: {Materia}";

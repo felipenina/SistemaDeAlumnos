@@ -8,6 +8,10 @@ public class Alumno : Persona
     public Alumno(string nombre, int legajo) : base(nombre, legajo)
     {
     }
+    public override string Presentarse()
+    {
+        return $"Hola, soy {Nombre}, alumno con legajo {Documento}.";
+    }
     public bool CargarNotas(double nota1, double nota2)
     {
         if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10)
