@@ -1,16 +1,12 @@
 ﻿namespace GestionAlumnos;
-public class Alumno
-{
-    public string Nombre { get; set; }
 
-    
-    public int Legajo { get; private set; }
+public class Alumno : Persona
+{
     public double Nota1 { get; private set; }
     public double Nota2 { get; private set; }
-    public Alumno(string nombre, int legajo)
+
+    public Alumno(string nombre, int legajo) : base(nombre, legajo)
     {
-        Nombre = nombre;
-        Legajo = legajo;
     }
     public bool CargarNotas(double nota1, double nota2)
     {
@@ -42,6 +38,6 @@ public class Alumno
     }
     public override string ToString()
     {
-        return $"{Legajo} - {Nombre} (promedio: {Promedio()})";
+        return $"{Documento} - {Nombre} (promedio: {Promedio()})";
     }
 }
