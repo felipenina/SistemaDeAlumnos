@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace GestionAlumnos;
 
-namespace SistemaDeAlumnos
+public class Preceptor : Persona
 {
-    internal class Preceptor
+    public string Turno { get; set; }
+
+    public Preceptor(string nombre, int documento, string turno) : base(nombre, documento)
     {
+        Turno = turno;
+    }
+
+    public override string Presentarse()
+    {
+        return $"Hola, soy {Nombre}, preceptor del turno {Turno}.";
     }
 }

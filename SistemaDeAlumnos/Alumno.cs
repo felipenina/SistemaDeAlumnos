@@ -1,6 +1,6 @@
 ﻿namespace GestionAlumnos;
 
-public class Alumno : Persona
+public class Alumno : Persona, IExportable
 {
     public double Nota1 { get; private set; }
     public double Nota2 { get; private set; }
@@ -43,5 +43,9 @@ public class Alumno : Persona
     public override string ToString()
     {
         return $"{Documento} - {Nombre} (promedio: {Promedio()})";
+    }
+    public string ExportarLinea()
+    {
+        return $"ALUMNO;{Documento};{Nombre};{Promedio()}";
     }
 }

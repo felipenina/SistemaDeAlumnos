@@ -1,5 +1,5 @@
 ﻿namespace GestionAlumnos;
-public class Profesor : Persona
+public class Profesor : Persona, IExportable
 {
     public string Materia { get; set; }
 
@@ -14,5 +14,9 @@ public class Profesor : Persona
     public override string ToString()
     {
         return $"Profesor: {Nombre} - DNI: {Documento} - Materia: {Materia}";
+    }
+    public string ExportarLinea()
+    {
+        return $"PROFESOR;{Nombre};{Materia}";
     }
 }
